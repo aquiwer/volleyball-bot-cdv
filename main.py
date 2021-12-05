@@ -12,7 +12,7 @@ from datetime import datetime
 
 # import numpy as np
 
-bot = Bot(token="2123107411:AAEcsw9wKqG7B_TFHPMr5brQC3Rozqbu6Q4")
+bot = Bot(token="")
 dp = Dispatcher(bot)
 
 @dp.message_handler(content_types=["new_chat_members"])
@@ -35,15 +35,7 @@ async def check_language(message: types.Message):
 
     await message.reply(list[random_index])
 
-# async def say_good_night(message: types.Message):
-#     current_datetime = datetime.now()
-#     if current_datetime.hour == 22:
-#         await bot.send_message(message.chat.id, "Good night :)")
-#
-# @dp.message_handler(content_types=["sticker"])
-# async def delete_stickers(message: types.Message):
-#     if message["from"].username == "dimovski5":
-#         await bot.delete_message(message.chat.id, message.message_id)
+
 
 
 executor.start_polling(dp, skip_updates=True)
